@@ -1,2 +1,2 @@
-# drf-
-drf实践和一些联系
+# drf-study
+drf实践和一些练习
