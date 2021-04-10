@@ -200,7 +200,7 @@ LOGGING = {
             "propagate": True,
         },
         # 打印sql语句到控制台
-        'django': {
+        'django.db.backends': {
             'handlers': ['console'],
             'level': 'DEBUG',
         },
