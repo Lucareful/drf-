@@ -22,7 +22,7 @@ class StudentListViewSet(APIView):
 
     def retrieve(self, request, pk=None):
         queryset = Student.objects.all()
-        if len(queryset) > 1:
+        if queryset.count() > 1:
             print("测试django doctor")
         user = get_object_or_404(queryset, pk=pk)
         serializer = StudentSerializer(user)
