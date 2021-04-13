@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# encoding: utf-8
 """
 @author: Luenci
 @file: serializer.py
@@ -12,15 +11,12 @@ from apps.models import Student, Course
 
 
 class StudentSerializer(serializers.Serializer):
-    """
-    学生类序列化器.
-    """
+    """学生类序列化器."""
 
     name = serializers.CharField(label="姓名", max_length=30)
     age = serializers.IntegerField(label="年龄")
     gender = serializers.ChoiceField(
-        choices=(('male', '男'), ('female', '女')),
-        default='male'
+        choices=(("male", "男"), ("female", "女")), default="male"
     )
 
     def create(self, validated_data):
@@ -30,16 +26,12 @@ class StudentSerializer(serializers.Serializer):
         pass
 
 
-
 class CourseSerializer(ModelSerializer):
-    """
-    课程类序列化器.
-    """
+    """课程类序列化器."""
 
     class Meta:
         model = Course
         fields = "__all__"
-
 
     def validate_scores(self, scores):
         if scores < 0 or scores > 100:
